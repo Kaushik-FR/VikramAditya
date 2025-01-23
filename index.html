@@ -15,7 +15,8 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-auth.js"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <style>
     body {
       background-color: #121212;
@@ -168,11 +169,7 @@
 .btn-primary:hover {
   background-color: #e68a00;
 }
-lection
 
-body{
-    background-color:#eee;    
-}
 .content{
     margin-top:40px;    
 }
@@ -305,7 +302,7 @@ body{
 #vdo {
     filter: blur(2px);
     position:absolute ;
-    top:60%;
+    top:65%;
     left:5%;
     width:90%;
 }
@@ -313,13 +310,151 @@ body{
 .text {
     position: absolute;
     top: 80%;
-    left: 35%;
+    left: 50%;
     transform: translate(-50%, -50%);
     font-weight: bold;
     color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
     text-align: center;
     z-index:10;
+}
+body {
+    
+}
+#kau1{
+    z-index:10;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:-50px;
+    overflow-y:scroll;
+    display:none;
+}
+#kau2{
+    z-index:10;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:-50px;
+    overflow-y:scroll;
+    display:none;
+}
+#kau3{
+    z-index:10;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:-50px;
+    overflow-y:scroll;
+    display:none;
+}
+#kau4{
+    z-index:10;
+    width:100%;
+    height:100%;
+    position:fixed;
+    top:-50px;
+    overflow-y:scroll;
+    display:none;
+}
+.checkout-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Header */
+header {
+    background-color: #3399cc;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+/* Section Styles */
+section {
+    padding: 20px;
+}
+
+section h4 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Product Info */
+.product-info p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.product-info strong {
+    color: #333;
+}
+
+/* Form Styles */
+.billing-form {
+    background-color: #f7f9fa;
+    padding: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.form-group button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #3399cc;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #287aa1;
+}
+
+/* Footer */
+footer {
+    background: #f1f1f1;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+footer p strong {
+    color: #333;
 }
   </style>
 </head>
@@ -343,7 +478,7 @@ body{
           <a class="nav-link" href="#transformations">Transformations</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" onclick="openModal()">Login/Sign Up</a>
+          <a class="nav-link" href="#about">About</a>
         </li>
       </ul>
     </div>
@@ -376,7 +511,7 @@ body{
                 <li>Max Potential</li>   
                 <li>PDF Format Report</li>          
     
-            </ul>             <div class="plan-footer"style="background-color:#222;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack1">Select Plan</a>             </div>         </div>     </div>     <div class="col-lg-4 col-md-4 col-sm-12">         <div class="plan-card plan-one">             <div class="pricing-header orange">                 <h4 class="plan-title">Basic</h4>                 <div class="plan-cost">399</div>                 <div class="plan-save">Basic Package</div>             </div>             <ul class="plan-features"style="background-color:#222;color:white;">            
+            </ul>             <div class="plan-footer"style="background-color:#222;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack1"onclick="d1()">Select Plan</a>             </div>         </div>     </div>     <div class="col-lg-4 col-md-4 col-sm-12">         <div class="plan-card plan-one">             <div class="pricing-header orange">                 <h4 class="plan-title">Basic</h4>                 <div class="plan-cost">399</div>                 <div class="plan-save">Basic Package</div>             </div>             <ul class="plan-features"style="background-color:#222;color:white;">            
             <li>Detailed Evaluation Of Your Face</li>     
             <li>Current Face Rating</li>     
             <li>Find Your archetype</li>     
@@ -390,20 +525,20 @@ body{
                                      </ul>      
                            
                             
-                                   <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-danger btn-lg btn-rounded"id="pack2">Select Plan</a>             </div>         </div>     </div>     <div class="col-lg-4 col-md-4 col-sm-12">         <div class="plan-card plan-one">             <div class="pricing-header green">                 <h4 class="plan-title">Advanced</h4>                 <div class="plan-cost">499</div>                 <div class="plan-save">Advanced Pack Best Value</div>             </div>             <ul class="plan-features"style="background-color:#222;color:yellow;">                 <li>All features from basic package</li>     
+                                   <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-danger btn-lg btn-rounded"id="pack2"onclick="d2()">Select Plan</a>             </div>         </div>     </div>     <div class="col-lg-4 col-md-4 col-sm-12">         <div class="plan-card plan-one">             <div class="pricing-header green">                 <h4 class="plan-title">Advanced</h4>                 <div class="plan-cost">499</div>                 <div class="plan-save">Advanced Pack Best Value</div>             </div>             <ul class="plan-features"style="background-color:#222;color:yellow;">                 <li>All features from basic package</li>     
             
                   
                   <li>Detailed Fashion Advice <br> Based On Your Archetype</li>
                   <li>Detailed Personal Hairstyle guide</li>     
                   <li>Any Doubt Clearance For upto 3 Months</li>
                   <li>3 Months OF Personal<br> follow-up on Telegram</li>
-                    </ul>             <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack3">Select Plan</a>             </div>         </div> 
+                    </ul>             <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack3"onclick="d3()">Select Plan</a>             </div>         </div> 
                       </div> 
                        <div class="col-lg-4 col-md-4 col-sm-12">         <div class="plan-card plan-one">             <div class="pricing-header light">                 <h4 class="plan-title">Premium</h4>                 <div class="plan-cost">799</div>                 <div class="plan-save">Premium Pack Best For Detailed Looksmaxxing</div>             </div>             <ul class="plan-features"style="background-color:#222;color:gold;">                 <li>All Features From Advanced Package</li>     
             
-                  <li>Dedicated video on Youtube <br> Or Person(It's Up To You)</li>
+                  <li>Deatiled Video Of You On Youtube <br></li>
                   <li>6 Months of Personal Follow<br> Up On Telegram</li>
-                    </ul>             <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack4">Select Plan</a>             </div>         </div> 
+                    </ul>             <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack4"onclick="d4()">Select Plan</a>             </div>         </div> 
                       </div> 
                       </div>
                        </div><br>
@@ -411,7 +546,339 @@ body{
 All photos, videos, and personal information shared will remain 100% confidential.<h4></center>
   <!-- Blog Section -->
   
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script> <!-- Razorpay Library -->
 
+    <div class="checkout-container"id="kau1">
+        <header>
+            <h1>Vikram Aaditya</h1>
+        </header>
+        <section class="checkout-details">
+            <h4>Checkout</h4>
+            <div class="product-info">
+                <p><strong>Product:Starter Pack</strong> <span id="productName">Starter Pack</span></p>
+                <p><strong>Price:249</strong> ₹<span id="productPrice">249</span></p>
+            </div>
+        </section>
+        <section class="billing-form">
+            <h4>Billing Details</h4>
+            <form id="paymentForm">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Any Other Notes:</label>
+                    <input type="text" id="note" name="note">
+                </div>
+                <div class="form-group">
+                    <label for="packageName">Package Name:</label>
+                    <input type="text" id="packageName" name="packageName" value="Starter Pack" readonly>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="payBtn">Pay ₹249</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+        
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for Razorpay Integration
+        document.getElementById('paymentForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const note = document.getElementById('note').value;
+            const packageName = document.getElementById('packageName').value;
+
+            const options = {
+                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+                "amount": 100, // Amount in paise
+                "currency": "INR",
+                "name": "Vikram Aaditya",
+                "description": "Payment for " + packageName,
+                "image": "https://your-logo-url.com/logo.png",
+                "handler": function (response) {
+                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": firstName + " " + lastName,
+                    "email": email
+                },
+                "notes": {
+                    "note": note,
+                    "package": packageName
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        });
+    </script>
+    <div class="checkout-container"id="kau2">
+        <header>
+            <h1>Vikram Aaditya</h1>
+        </header>
+        <section class="checkout-details">
+            <h4>Checkout</h4>
+            <div class="product-info">
+                <p><strong>Product:Basic Pack</strong> <span id="productName">Basic</span></p>
+                <p><strong>Price:399</strong> ₹<span id="productPrice">399</span></p>
+            </div>
+        </section>
+        <section class="billing-form">
+            <h4>Billing Details</h4>
+            <form id="paymentForm2">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Any Other Notes:</label>
+                    <input type="text" id="note" name="note">
+                </div>
+                <div class="form-group">
+                    <label for="packageName">Package Name:</label>
+                    <input type="text" id="packageName" name="packageName" value="Basic Pack" readonly>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="payBtn">Pay ₹399</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+        
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for Razorpay Integration
+        document.getElementById('paymentForm2').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const note = document.getElementById('note').value;
+            const packageName = document.getElementById('packageName').value;
+
+            const options = {
+                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+                "amount": 39900, // Amount in paise
+                "currency": "INR",
+                "name": "Vikram Aaditya",
+                "description": "Payment for " + packageName,
+                "image": "https://your-logo-url.com/logo.png",
+                "handler": function (response) {
+                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": firstName + " " + lastName,
+                    "email": email
+                },
+                "notes": {
+                    "note": note,
+                    "package": packageName
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        });
+    </script>
+    <div class="checkout-container"id="kau3">
+        <header>
+            <h1>Vikram Aaditya</h1>
+        </header>
+        <section class="checkout-details">
+            <h4>Checkout</h4>
+            <div class="product-info">
+                <p><strong>Product:Advanced Pack</strong> <span id="productName">Advanced</span></p>
+                <p><strong>Price:499</strong> ₹<span id="productPrice">499</span></p>
+            </div>
+        </section>
+        <section class="billing-form">
+            <h4>Billing Details</h4>
+            <form id="paymentForm3">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Any Other Notes:</label>
+                    <input type="text" id="note" name="note">
+                </div>
+                <div class="form-group">
+                    <label for="packageName">Package Name:</label>
+                    <input type="text" id="packageName" name="packageName" value="Advanced Pack" readonly>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="payBtn">Pay ₹499</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+        
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for Razorpay Integration
+        document.getElementById('paymentForm3').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const note = document.getElementById('note').value;
+            const packageName = document.getElementById('packageName').value;
+
+            const options = {
+                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+                "amount": 49900, // Amount in paise
+                "currency": "INR",
+                "name": "Vikram Aaditya",
+                "description": "Payment for " + packageName,
+                "image": "https://your-logo-url.com/logo.png",
+                "handler": function (response) {
+                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": firstName + " " + lastName,
+                    "email": email
+                },
+                "notes": {
+                    "note": note,
+                    "package": packageName
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        });
+    </script>
+    
+    
+    <div class="checkout-container"id="kau4">
+        <header>
+            <h1>Vikram Aaditya</h1>
+        </header>
+        <section class="checkout-details">
+            <h4>Checkout</h4>
+            <div class="product-info">
+                <p><strong>Product:Premium Pack</strong> <span id="productName">Premium</span></p>
+                <p><strong style="color:gold;">Price:799</strong> ₹<span id="productPrice">799</span></p>
+            </div>
+        </section>
+        <section class="billing-form">
+            <h4>Billing Details</h4>
+            <form id="paymentForm4">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="note">Any Other Notes:</label>
+                    <input type="text" id="note" name="note">
+                </div>
+                <div class="form-group">
+                    <label for="packageName">Package Name:</label>
+                    <input type="text" id="packageName" name="packageName" value="Advanced Pack" readonly>
+                </div>
+                <div class="form-group">
+                    <button type="submit" id="payBtn">Pay ₹799</button>
+                </div>
+            </form>
+        </section>
+        <footer>
+        
+        </footer>
+    </div>
+
+    <script>
+        // JavaScript for Razorpay Integration
+        document.getElementById('paymentForm4').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const note = document.getElementById('note').value;
+            const packageName = document.getElementById('packageName').value;
+
+            const options = {
+                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+                "amount": 79900, // Amount in paise
+                "currency": "INR",
+                "name": "Vikram Aaditya",
+                "description": "Payment for " + packageName,
+                "image": "https://your-logo-url.com/logo.png",
+                "handler": function (response) {
+                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
+                },
+                "prefill": {
+                    "name": firstName + " " + lastName,
+                    "email": email
+                },
+                "notes": {
+                    "note": note,
+                    "package": packageName
+                },
+                "theme": {
+                    "color": "#3399cc"
+                }
+            };
+
+            const rzp = new Razorpay(options);
+            rzp.open();
+        });
+    </script>
+    
   <!-- Slider for Transformations -->
   <!-- Transformations Section -->
 <section id="transformations" class="container mt-5">
@@ -419,7 +886,10 @@ All photos, videos, and personal information shared will remain 100% confidentia
   <div id="carouselTransformations" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://www.dropbox.com/scl/fi/9pj0o45mop7ksoterxxdf/InShot_20250119_105800424.jpg?rlkey=vykn785wtl3be6razrftt4flu&st=aau81h5q&raw=1" class="d-block w-100" alt="Transformation 1">
+        <img src="https://www.dropbox.com/scl/fi/nd5u613m941owdyisebhz/InShot_20250123_211654909.jpg?rlkey=yutsyjmfm8z14rfuaaxetz92o&st=l75882cv&raw=1" class="d-block w-100" alt="Transformation 1">
+      </div>
+      <div class="carousel-item">
+        <img src="https://www.dropbox.com/scl/fi/8wfkg91tsodzjo2dtt9gl/InShot_20250123_212547444.jpg?rlkey=3szf40af3wd5b8e3izuhl06ot&st=vqqqivvw&raw=1" class="d-block w-100" alt="Transformation 2">
       </div>
       <div class="carousel-item">
         <img src="https://www.dropbox.com/scl/fi/7w98o609qgo9bdvqdcpcx/InShot_20250120_091145464.jpg?rlkey=tpbkacnlp3xnxwnnaafv8r9k6&st=jn3mb44q&raw=1" class="d-block w-100" alt="Transformation 2">
@@ -481,8 +951,20 @@ All photos, videos, and personal information shared will remain 100% confidentia
     </a>
   </div>
 </section>
-  
-<!-- Login/Signup Modal -->
+  <section id="about" class="container mt-5" data-aos="fade-up">
+    <h2 class="section-title">About Me</h2>
+    <p>
+
+Hi, I’m Vikram Aaditya, and I’ve been passionate about self-improvement for the past 4 years. Over this time, I’ve gained a wide range of knowledge about facial aesthetics and what makes someone visually appealing—both from a mathematical and subjective perspective.  
+
+I’ve analyzed and rated over 2,000 faces, which has given me unique insights into patterns of attractiveness and how small changes can make a big difference. My goal is to help people understand their own potential and improve their appearance in a realistic and effective way.  
+
+With 45,000+ subscribers on my YouTube channel, I’ve built a community that’s all about understanding and enhancing facial aesthetics. Whether you’re looking to improve your look or just curious about what makes a face attractive, I’m here to share what I’ve learned and help you on your journey.  
+
+Let’s grow and transform together!</p>
+    
+  </section>
+
 <div class="modal" id="authModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -492,6 +974,7 @@ All photos, videos, and personal information shared will remain 100% confidentia
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
+      
       <div class="modal-body">
         <form id="authForm">
           <div class="form-group">
@@ -509,149 +992,34 @@ All photos, videos, and personal information shared will remain 100% confidentia
   </div>
 </div>
 
+<script>
+  
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.utils.toArray(".animate-text").forEach((element) => {
+    gsap.fromTo(
+      element,
+      { opacity: 0, y: 50 }, // Initial state (hidden + down)
+      {
+        opacity: 1,
+        y: 0, // Final state (visible + aligned)
+        duration: 1,
+        scrollTrigger: {
+          trigger: element,
+          start: "top 80%", // Start when the element is 80% into the viewport
+          end: "top 30%", // End when the element is 30% into the viewport
+          scrub: false, // No scrub, play once
+          toggleActions: "play none none none", // Play on scroll, no reset
+        },
+      }
+    );
+  });
+</script>
+
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 
     <script>
-        document.getElementById('pack1').addEventListener('click', function () {
-    // Prompt the user for their email
-    var email = prompt("Please enter your email address to receive payment details:");
-
-    if (!email) {
-        alert("Email is required to proceed with the payment.");
-        return; // Exit if email is not provided
-    }
-
-    var options = {
-        "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your public key
-        "amount": 24900, // Amount in paise
-        "currency": "INR",
-        "name": "Vikram Aaditya",
-        "description": "Payment for Starter Pack",
-        "image": "https://your-logo-url.com/logo.png",
-        "handler": function (response) {
-            alert('Payment Successful! YOU WILL RECEIVE AN EMAIL SOON. Payment ID: ' + response.razorpay_payment_id);
-            console.log(response);
-        },
-        "prefill": {
-            "name": "", // Optional prefill data
-            "email": email, // Use the email entered by the user
-            "contact": "" // Leave empty for user input
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
-    };
-
-    var rzp = new Razorpay(options);
-    rzp.open();
-
-    event.preventDefault();
-});
-
-document.getElementById('pack2').addEventListener('click', function () {
-    var email = prompt("Please enter your email address to receive payment details:");
-
-    if (!email) {
-        alert("Email is required to proceed with the payment.");
-        return;
-    }
-
-    var options = {
-        "key": "rzp_live_oPBMyB5DN4JCJC",
-        "amount": 39900,
-        "currency": "INR",
-        "name": "Vikram Aaditya",
-        "description": "Payment for Basic Pack",
-        "image": "https://your-logo-url.com/logo.png",
-        "handler": function (response) {
-            alert('Payment Successful! YOU WILL RECEIVE AN EMAIL SOON. Payment ID: ' + response.razorpay_payment_id);
-            console.log(response);
-        },
-        "prefill": {
-            "name": "",
-            "email": email,
-            "contact": ""
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
-    };
-
-    var rzp = new Razorpay(options);
-    rzp.open();
-
-    event.preventDefault();
-});
-
-document.getElementById('pack3').addEventListener('click', function () {
-    var email = prompt("Please enter your email address to receive payment details:");
-
-    if (!email) {
-        alert("Email is required to proceed with the payment.");
-        return;
-    }
-
-    var options = {
-        "key": "rzp_live_oPBMyB5DN4JCJC",
-        "amount": 49900,
-        "currency": "INR",
-        "name": "Vikram Aaditya",
-        "description": "Payment for Advanced Pack",
-        "image": "https://your-logo-url.com/logo.png",
-        "handler": function (response) {
-            alert('Payment Successful! YOU WILL RECEIVE AN EMAIL SOON. Payment ID: ' + response.razorpay_payment_id);
-            console.log(response);
-        },
-        "prefill": {
-            "name": "",
-            "email": email,
-            "contact": ""
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
-    };
-
-    var rzp = new Razorpay(options);
-    rzp.open();
-
-    event.preventDefault();
-});
-
-document.getElementById('pack4').addEventListener('click', function () {
-    var email = prompt("Please enter your email address to receive payment details:");
-
-    if (!email) {
-        alert("Email is required to proceed with the payment.");
-        return;
-    }
-
-    var options = {
-        "key": "rzp_live_oPBMyB5DN4JCJC",
-        "amount": 79900,
-        "currency": "INR",
-        "name": "Vikram Aaditya",
-        "description": "Payment for Premium Pack",
-        "image": "https://your-logo-url.com/logo.png",
-        "handler": function (response) {
-            alert('Payment Successful! YOU WILL RECEIVE AN EMAIL SOON. Payment ID: ' + response.razorpay_payment_id);
-            console.log(response);
-        },
-        "prefill": {
-            "name": "",
-            "email": email,
-            "contact": ""
-        },
-        "theme": {
-            "color": "#3399cc"
-        }
-    };
-
-    var rzp = new Razorpay(options);
-    rzp.open();
-
-    event.preventDefault();
-});
+        
     </script>
 
   <!-- Footer -->
@@ -725,9 +1093,11 @@ function closeModal() {
     }
   }
   
-  
+  function d1(){
+      document.getElementById("kau1").style.display="block"
+  }
 
   </script>
 </body>
 
-  </html>
+                      </html>
