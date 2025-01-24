@@ -537,7 +537,7 @@ footer p strong {
                       </div> 
                        <div class="col-lg-4 col-md-4 col-sm-12">         <div class="plan-card plan-one">             <div class="pricing-header light">                 <h4 class="plan-title">Premium</h4>                 <div class="plan-cost">799</div>                 <div class="plan-save">Premium Pack Best For Detailed Looksmaxxing</div>             </div>             <ul class="plan-features"style="background-color:#222;color:gold;">                 <li>All Features From Advanced Package</li>     
             
-                  <li>Deatiled Video Of You On Youtube <br></li>
+                  <li>Deatiled Video Of Your Guide<br></li>
                   <li>6 Months of Personal Follow<br> Up On Telegram</li>
                     </ul>             <div class="plan-footer"style="background-color:#222;color:white;">                 <a href="#" class="btn btn-info btn-lg btn-rounded"id="pack4"onclick="d4()">Select Plan</a>             </div>         </div> 
                       </div> 
@@ -558,7 +558,7 @@ All photos, videos, and personal information shared will remain 100% confidentia
         <h4>Checkout</h4>
         <div class="product-info">
             <p><strong>Product: Starter Pack</strong></p>
-            <p><strong>Price: ₹249</strong><span id="productPrice1">249</span></p>
+            <p><strong>Price: ₹1</strong><span id="productPrice1">1</span></p>
         </div>
     </section>
     <section class="billing-form">
@@ -589,7 +589,7 @@ All photos, videos, and personal information shared will remain 100% confidentia
                 <input type="checkbox" id="smvCheck1" name="smvCheck">
             </div>
             <div class="form-group">
-                <button type="submit" id="payBtn">Pay ₹<span id="payAmount1">249</span></button>
+                <button type="submit" id="payBtn">Pay ₹<span id="payAmount1">1</span></button>
             </div>
         </form>
     </section>
@@ -597,7 +597,7 @@ All photos, videos, and personal information shared will remain 100% confidentia
 
 <script>
     document.getElementById('smvCheck1').addEventListener('change', function () {
-        const basePrice = 249;
+        const basePrice = 1;
         const isChecked = this.checked;
         const newPrice = isChecked ? basePrice + 100 : basePrice;
 
@@ -615,7 +615,7 @@ All photos, videos, and personal information shared will remain 100% confidentia
         const packageName = document.getElementById('packageName').value;
         const isSMVChecked = document.getElementById('smvCheck1').checked;
 
-        const amount = isSMVChecked ? 24900 + 10000 : 24900; // Amount in paise
+        const amount = isSMVChecked ? 100 + 10000 : 24900; // Amount in paise
 
         const options = {
             "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
