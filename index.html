@@ -487,12 +487,13 @@ footer p strong {
   <!-- Hero Section -->
   <section class="hero-section">
     <div data-aos="fade-up">
+    
       <h1>Vikram Aaditya</h1>
       <p>Looksmaxxing</p>
     </div><br><br>
     
     
-    <h5 class="text">Have you ever thought how attractive are you?</h5>
+    <h3 class="text">Have you ever thought how attractive are you?</h3>
 
 <img src="https://www.dropbox.com/scl/fi/mhkr7njzao114iugwr1sj/Untitled-1-1.png?rlkey=y0w098zetnrp0t9byu4yhi41d&st=05j7t1zd&raw=1"id="vdo">
   </section>
@@ -548,336 +549,411 @@ All photos, videos, and personal information shared will remain 100% confidentia
   
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script> <!-- Razorpay Library -->
 
-    <div class="checkout-container"id="kau1">
-        <header>
-            <h1>Vikram Aaditya</h1>
-        </header>
-        <section class="checkout-details">
-            <h4>Checkout</h4>
-            <div class="product-info">
-                <p><strong>Product:Starter Pack</strong> <span id="productName">Starter Pack</span></p>
-                <p><strong>Price:249</strong> ₹<span id="productPrice">249</span></p>
+    <!-- Starter Pack -->
+<div class="checkout-container" id="kau1">
+    <header>
+        <h1>Vikram Aaditya</h1>
+    </header>
+    <section class="checkout-details">
+        <h4>Checkout</h4>
+        <div class="product-info">
+            <p><strong>Product: Starter Pack</strong></p>
+            <p><strong>Price: ₹249</strong><span id="productPrice1">249</span></p>
+        </div>
+    </section>
+    <section class="billing-form">
+        <h4>Billing Details</h4>
+        <form id="paymentForm">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
             </div>
-        </section>
-        <section class="billing-form">
-            <h4>Billing Details</h4>
-            <form id="paymentForm">
-                <div class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="note">Any Other Notes:</label>
-                    <input type="text" id="note" name="note">
-                </div>
-                <div class="form-group">
-                    <label for="packageName">Package Name:</label>
-                    <input type="text" id="packageName" name="packageName" value="Starter Pack" readonly>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="payBtn">Pay ₹249</button>
-                </div>
-            </form>
-        </section>
-        <footer>
-        
-        </footer>
-    </div>
-
-    <script>
-        // JavaScript for Razorpay Integration
-        document.getElementById('paymentForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const note = document.getElementById('note').value;
-            const packageName = document.getElementById('packageName').value;
-
-            const options = {
-                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
-                "amount": 100, // Amount in paise
-                "currency": "INR",
-                "name": "Vikram Aaditya",
-                "description": "Payment for " + packageName,
-                "image": "https://your-logo-url.com/logo.png",
-                "handler": function (response) {
-                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
-                },
-                "prefill": {
-                    "name": firstName + " " + lastName,
-                    "email": email
-                },
-                "notes": {
-                    "note": note,
-                    "package": packageName
-                },
-                "theme": {
-                    "color": "#3399cc"
-                }
-            };
-
-            const rzp = new Razorpay(options);
-            rzp.open();
-        });
-    </script>
-    <div class="checkout-container"id="kau2">
-        <header>
-            <h1>Vikram Aaditya</h1>
-        </header>
-        <section class="checkout-details">
-            <h4>Checkout</h4>
-            <div class="product-info">
-                <p><strong>Product:Basic Pack</strong> <span id="productName">Basic</span></p>
-                <p><strong>Price:399</strong> ₹<span id="productPrice">399</span></p>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
             </div>
-        </section>
-        <section class="billing-form">
-            <h4>Billing Details</h4>
-            <form id="paymentForm2">
-                <div class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="note">Any Other Notes:</label>
-                    <input type="text" id="note" name="note">
-                </div>
-                <div class="form-group">
-                    <label for="packageName">Package Name:</label>
-                    <input type="text" id="packageName" name="packageName" value="Basic Pack" readonly>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="payBtn">Pay ₹399</button>
-                </div>
-            </form>
-        </section>
-        <footer>
-        
-        </footer>
-    </div>
-
-    <script>
-        // JavaScript for Razorpay Integration
-        document.getElementById('paymentForm2').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const note = document.getElementById('note').value;
-            const packageName = document.getElementById('packageName').value;
-
-            const options = {
-                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
-                "amount": 39900, // Amount in paise
-                "currency": "INR",
-                "name": "Vikram Aaditya",
-                "description": "Payment for " + packageName,
-                "image": "https://your-logo-url.com/logo.png",
-                "handler": function (response) {
-                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
-                },
-                "prefill": {
-                    "name": firstName + " " + lastName,
-                    "email": email
-                },
-                "notes": {
-                    "note": note,
-                    "package": packageName
-                },
-                "theme": {
-                    "color": "#3399cc"
-                }
-            };
-
-            const rzp = new Razorpay(options);
-            rzp.open();
-        });
-    </script>
-    <div class="checkout-container"id="kau3">
-        <header>
-            <h1>Vikram Aaditya</h1>
-        </header>
-        <section class="checkout-details">
-            <h4>Checkout</h4>
-            <div class="product-info">
-                <p><strong>Product:Advanced Pack</strong> <span id="productName">Advanced</span></p>
-                <p><strong>Price:499</strong> ₹<span id="productPrice">499</span></p>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
             </div>
-        </section>
-        <section class="billing-form">
-            <h4>Billing Details</h4>
-            <form id="paymentForm3">
-                <div class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="note">Any Other Notes:</label>
-                    <input type="text" id="note" name="note">
-                </div>
-                <div class="form-group">
-                    <label for="packageName">Package Name:</label>
-                    <input type="text" id="packageName" name="packageName" value="Advanced Pack" readonly>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="payBtn">Pay ₹499</button>
-                </div>
-            </form>
-        </section>
-        <footer>
-        
-        </footer>
-    </div>
+            <div class="form-group">
+                <label for="note">Any Other Notes:</label>
+                <input type="text" id="note" name="note">
+            </div>
+            <div class="form-group">
+                <label for="packageName">Package Name:</label>
+                <input type="text" id="packageName" name="packageName" value="Starter Pack" readonly>
+            </div>
+            <div class="form-group">
+                <label for="smvCheck">+ ₹100 for SMV Calculations:</label>
+                <input type="checkbox" id="smvCheck1" name="smvCheck">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="payBtn">Pay ₹<span id="payAmount1">249</span></button>
+            </div>
+        </form>
+    </section>
+</div>
 
-    <script>
-        // JavaScript for Razorpay Integration
-        document.getElementById('paymentForm3').addEventListener('submit', function (e) {
-            e.preventDefault();
+<script>
+    document.getElementById('smvCheck1').addEventListener('change', function () {
+        const basePrice = 249;
+        const isChecked = this.checked;
+        const newPrice = isChecked ? basePrice + 100 : basePrice;
 
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const note = document.getElementById('note').value;
-            const packageName = document.getElementById('packageName').value;
+        document.getElementById('productPrice1').textContent = newPrice;
+        document.getElementById('payAmount1').textContent = newPrice;
+    });
 
-            const options = {
-                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
-                "amount": 49900, // Amount in paise
-                "currency": "INR",
-                "name": "Vikram Aaditya",
-                "description": "Payment for " + packageName,
-                "image": "https://your-logo-url.com/logo.png",
-                "handler": function (response) {
-                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
-                },
-                "prefill": {
-                    "name": firstName + " " + lastName,
-                    "email": email
-                },
-                "notes": {
-                    "note": note,
-                    "package": packageName
-                },
-                "theme": {
-                    "color": "#3399cc"
-                }
-            };
+    document.getElementById('paymentForm').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-            const rzp = new Razorpay(options);
-            rzp.open();
-        });
-    </script>
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const note = document.getElementById('note').value;
+        const packageName = document.getElementById('packageName').value;
+        const isSMVChecked = document.getElementById('smvCheck1').checked;
+
+        const amount = isSMVChecked ? 24900 + 10000 : 24900; // Amount in paise
+
+        const options = {
+            "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+            "amount": amount, // Amount in paise
+            "currency": "INR",
+            "name": "Vikram Aaditya",
+            "description": "Payment for " + packageName,
+            "image": "https://your-logo-url.com/logo.png",
+            "handler": function (response) {
+                alert('Payment Successful! You Will Receive Email Soon. Please Take a Screenshot for Payment ID. Payment ID: ' + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": firstName + " " + lastName,
+                "email": email
+            },
+            "notes": {
+                "note": note,
+                "package": packageName,
+                "SMV Calculations": isSMVChecked ? "Yes" : "No"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    });
+</script>
+    <!-- Starter Pack -->
+<div class="checkout-container" id="kau2">
+    <header>
+        <h1>Vikram Aaditya</h1>
+    </header>
+    <section class="checkout-details">
+        <h4>Checkout</h4>
+        <div class="product-info">
+            <p><strong>Product: Basic Pack</strong></p>
+            <p><strong>Price: ₹399</strong><span id="productPrice2">399</span></p>
+        </div>
+    </section>
+    <section class="billing-form">
+        <h4>Billing Details</h4>
+        <form id="paymentForm2">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="note">Any Other Notes:</label>
+                <input type="text" id="note" name="note">
+            </div>
+            <div class="form-group">
+                <label for="packageName">Package Name:</label>
+                <input type="text" id="packageName" name="packageName" value="Basic Pack" readonly>
+            </div>
+            <div class="form-group">
+                <label for="smvCheck2">+ ₹100 for SMV Calculations:</label>
+                <input type="checkbox" id="smvCheck2" name="smvCheck">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="payBtn2">Pay ₹<span id="payAmount2">399</span></button>
+            </div>
+        </form>
+    </section>
+</div>
+
+<script>
+    // Handle checkbox for SMV calculations
+    document.getElementById('smvCheck2').addEventListener('change', function () {
+        const basePrice = 399;
+        const isChecked = this.checked;
+        const newPrice = isChecked ? basePrice + 100 : basePrice;
+
+        document.getElementById('productPrice2').textContent = newPrice;
+        document.getElementById('payAmount2').textContent = newPrice;
+    });
+
+    // Handle form submission
+    document.getElementById('paymentForm2').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const note = document.getElementById('note').value;
+        const packageName = document.getElementById('packageName').value;
+        const isSMVChecked = document.getElementById('smvCheck2').checked;
+
+        const amount = isSMVChecked ? 39900 + 10000 : 39900; // Amount in paise
+
+        const options = {
+            "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+            "amount": amount, // Amount in paise
+            "currency": "INR",
+            "name": "Vikram Aaditya",
+            "description": "Payment for " + packageName,
+            "image": "https://your-logo-url.com/logo.png",
+            "handler": function (response) {
+                alert('Payment Successful! You Will Receive Email Soon. Please Take a Screenshot for Payment ID. Payment ID: ' + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": firstName + " " + lastName,
+                "email": email
+            },
+            "notes": {
+                "note": note,
+                "package": packageName,
+                "SMV Calculations": isSMVChecked ? "Yes" : "No"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    });
+</script>
     
-    
-    <div class="checkout-container"id="kau4">
-        <header>
-            <h1>Vikram Aaditya</h1>
-        </header>
-        <section class="checkout-details">
-            <h4>Checkout</h4>
-            <div class="product-info">
-                <p><strong>Product:Premium Pack</strong> <span id="productName">Premium</span></p>
-                <p><strong style="color:gold;">Price:799</strong> ₹<span id="productPrice">799</span></p>
+    <div class="checkout-container" id="kau3">
+    <header>
+        <h1>Vikram Aaditya</h1>
+    </header>
+    <section class="checkout-details">
+        <h4>Checkout</h4>
+        <div class="product-info">
+            <p><strong>Product: Advanced Pack</strong> <span id="productName">Advanced</span></p>
+            <p><strong>Price: ₹499</strong><span id="productPrice3">499</span></p>
+        </div>
+    </section>
+    <section class="billing-form">
+        <h4>Billing Details</h4>
+        <form id="paymentForm3">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
             </div>
-        </section>
-        <section class="billing-form">
-            <h4>Billing Details</h4>
-            <form id="paymentForm4">
-                <div class="form-group">
-                    <label for="firstName">First Name:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="note">Any Other Notes:</label>
-                    <input type="text" id="note" name="note">
-                </div>
-                <div class="form-group">
-                    <label for="packageName">Package Name:</label>
-                    <input type="text" id="packageName" name="packageName" value="Advanced Pack" readonly>
-                </div>
-                <div class="form-group">
-                    <button type="submit" id="payBtn">Pay ₹799</button>
-                </div>
-            </form>
-        </section>
-        <footer>
-        
-        </footer>
-    </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="note">Any Other Notes:</label>
+                <input type="text" id="note" name="note">
+            </div>
+            <div class="form-group">
+                <label for="packageName">Package Name:</label>
+                <input type="text" id="packageName" name="packageName" value="Advanced Pack" readonly>
+            </div>
+            <div class="form-group">
+                <label for="smvCheck3">+ ₹100 for SMV Calculations:</label>
+                <input type="checkbox" id="smvCheck3" name="smvCheck">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="payBtn3">Pay ₹<span id="payAmount3">499</span></button>
+            </div>
+        </form>
+    </section>
+</div>
 
-    <script>
-        // JavaScript for Razorpay Integration
-        document.getElementById('paymentForm4').addEventListener('submit', function (e) {
-            e.preventDefault();
+<script>
+    // Handle checkbox for SMV calculations
+    document.getElementById('smvCheck3').addEventListener('change', function () {
+        const basePrice = 499;
+        const isChecked = this.checked;
+        const newPrice = isChecked ? basePrice + 100 : basePrice;
 
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const note = document.getElementById('note').value;
-            const packageName = document.getElementById('packageName').value;
+        document.getElementById('productPrice3').textContent = newPrice;
+        document.getElementById('payAmount3').textContent = newPrice;
+    });
 
-            const options = {
-                "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
-                "amount": 79900, // Amount in paise
-                "currency": "INR",
-                "name": "Vikram Aaditya",
-                "description": "Payment for " + packageName,
-                "image": "https://your-logo-url.com/logo.png",
-                "handler": function (response) {
-                    alert('Payment Successful! You Will Revieve Email Soon Please Take screenshot for payment id Payment ID: ' + response.razorpay_payment_id);
-                },
-                "prefill": {
-                    "name": firstName + " " + lastName,
-                    "email": email
-                },
-                "notes": {
-                    "note": note,
-                    "package": packageName
-                },
-                "theme": {
-                    "color": "#3399cc"
-                }
-            };
+    // Handle form submission
+    document.getElementById('paymentForm3').addEventListener('submit', function (e) {
+        e.preventDefault();
 
-            const rzp = new Razorpay(options);
-            rzp.open();
-        });
-    </script>
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const note = document.getElementById('note').value;
+        const packageName = document.getElementById('packageName').value;
+        const isSMVChecked = document.getElementById('smvCheck3').checked;
+
+        const amount = isSMVChecked ? 49900 + 10000 : 49900; // Amount in paise
+
+        const options = {
+            "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+            "amount": amount, // Amount in paise
+            "currency": "INR",
+            "name": "Vikram Aaditya",
+            "description": "Payment for " + packageName,
+            "image": "https://your-logo-url.com/logo.png",
+            "handler": function (response) {
+                alert('Payment Successful! You Will Receive Email Soon. Please Take a Screenshot for Payment ID. Payment ID: ' + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": firstName + " " + lastName,
+                "email": email
+            },
+            "notes": {
+                "note": note,
+                "package": packageName,
+                "SMV Calculations": isSMVChecked ? "Yes" : "No"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    });
+</script>
+    <div class="checkout-container" id="kau4">
+    <header>
+        <h1>Vikram Aaditya</h1>
+    </header>
+    <section class="checkout-details">
+        <h4>Checkout</h4>
+        <div class="product-info">
+            <p><strong>Product: Premium Pack</strong> <span id="productName">Premium</span></p>
+            <p><strong style="color:gold;">Price: ₹799</strong><span id="productPrice4">799</span></p>
+        </div>
+    </section>
+    <section class="billing-form">
+        <h4>Billing Details</h4>
+        <form id="paymentForm4">
+            <div class="form-group">
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="note">Any Other Notes:</label>
+                <input type="text" id="note" name="note">
+            </div>
+            <div class="form-group">
+                <label for="packageName">Package Name:</label>
+                <input type="text" id="packageName" name="packageName" value="Premium Pack" readonly>
+            </div>
+            <div class="form-group">
+                <label for="smvCheck4">+ ₹100 for SMV Calculations:</label>
+                <input type="checkbox" id="smvCheck4" name="smvCheck">
+            </div>
+            <div class="form-group">
+                <label for="maintenanceCheck4">+ ₹1 for Website Maintenance:</label>
+                <input type="checkbox" id="maintenanceCheck4" name="maintenanceCheck">
+            </div>
+            <div class="form-group">
+                <button type="submit" id="payBtn4">Pay ₹<span id="payAmount4">799</span></button>
+            </div>
+        </form>
+    </section>
+</div>
+
+<script>
+    // Handle checkbox for additional charges
+    document.getElementById('smvCheck4').addEventListener('change', updatePrice);
+    document.getElementById('maintenanceCheck4').addEventListener('change', updatePrice);
+
+    function updatePrice() {
+        const basePrice = 799;
+        const isSMVChecked = document.getElementById('smvCheck4').checked;
+        const isMaintenanceChecked = document.getElementById('maintenanceCheck4').checked;
+
+        let newPrice = basePrice;
+        if (isSMVChecked) newPrice += 100;
+        if (isMaintenanceChecked) newPrice += 1;
+
+        document.getElementById('productPrice4').textContent = newPrice;
+        document.getElementById('payAmount4').textContent = newPrice;
+    }
+
+    // Handle form submission
+    document.getElementById('paymentForm4').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const firstName = document.getElementById('firstName').value;
+        const lastName = document.getElementById('lastName').value;
+        const email = document.getElementById('email').value;
+        const note = document.getElementById('note').value;
+        const packageName = document.getElementById('packageName').value;
+
+        const isSMVChecked = document.getElementById('smvCheck4').checked;
+        const isMaintenanceChecked = document.getElementById('maintenanceCheck4').checked;
+
+        let amount = 79900; // Base amount in paise
+        if (isSMVChecked) amount += 10000; // Add ₹100 in paise
+        if (isMaintenanceChecked) amount += 100; // Add ₹1 in paise
+
+        const options = {
+            "key": "rzp_live_oPBMyB5DN4JCJC", // Replace with your Razorpay key
+            "amount": amount, // Amount in paise
+            "currency": "INR",
+            "name": "Vikram Aaditya",
+            "description": "Payment for " + packageName,
+            "image": "https://your-logo-url.com/logo.png",
+            "handler": function (response) {
+                alert('Payment Successful! You Will Receive an Email Soon. Please Take a Screenshot for Payment ID. Payment ID: ' + response.razorpay_payment_id);
+            },
+            "prefill": {
+                "name": firstName + " " + lastName,
+                "email": email
+            },
+            "notes": {
+                "note": note,
+                "package": packageName,
+                "SMV Calculations": isSMVChecked ? "Yes" : "No",
+                "Website Maintenance": isMaintenanceChecked ? "Yes" : "No"
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+    });
+</script>
     
   <!-- Slider for Transformations -->
   <!-- Transformations Section -->
@@ -964,7 +1040,7 @@ With 45,000+ subscribers on my YouTube channel, I’ve built a community that’
 Let’s grow and transform together!</p>
     
   </section>
-
+<center><img src="https://www.dropbox.com/scl/fi/49orsptw3m0jes3a9qqg6/1737547325179.jpg?rlkey=8b5zvhjed59kllg4nmvkexhfw&st=3y3mz1iz&raw=1"id="vimg"style="width:95%"></center>
 <div class="modal" id="authModal" tabindex="-1" role="dialog">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -1096,8 +1172,16 @@ function closeModal() {
   function d1(){
       document.getElementById("kau1").style.display="block"
   }
-
+  function d2(){
+      document.getElementById("kau2").style.display="block"
+  }
+function d3(){
+      document.getElementById("kau3").style.display="block"
+  }
+  function d4(){
+      document.getElementById("kau4").style.display="block"
+  }
   </script>
 </body>
 
-                      </html>
+  </html>
